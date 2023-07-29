@@ -1,6 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { BrowserRouter, Link, Routes, Route } from 'react-router-dom'
 
 function HomePage() {
   return <p>This is Homepage</p>;
@@ -30,7 +30,13 @@ function App() {
           </li>
         </ul>
       </header>
-      <main></main>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+        </Routes>
+      </main>
     </>
   )
 }
