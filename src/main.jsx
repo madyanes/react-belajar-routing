@@ -1,5 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Link } from 'react-router-dom'
 
 function HomePage() {
   return <p>This is Homepage</p>;
@@ -14,8 +15,29 @@ function FAQPage() {
 }
 
 function App() {
-  return <p>Hello, World!</p>;
+  return (
+    <>
+      <header>
+        <ul>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/faq">FAQ</Link>
+          </li>
+        </ul>
+      </header>
+      <main></main>
+    </>
+  )
 }
 
 const root = createRoot(document.getElementById('root'))
-root.render(<App />)
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)
